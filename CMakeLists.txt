@@ -38,10 +38,10 @@ SET(TARGET_EXE "kuikjulia")
 #インクルードパスを指定
 #GTKの設定
 include(FindPkgConfig)
-pkg_check_modules(GMODULE gmodule-2.0)
-pkg_check_modules(GTK gtk+-3.0)
-pkg_check_modules(VTE vte-2.91) 
-pkg_check_modules(GTKSOURCEVIEW gtksourceview-3.0)
+pkg_check_modules(GMODULE REQUIRED gmodule-2.0)
+pkg_check_modules(GTK REQUIRED gtk+-3.0)
+pkg_check_modules(VTE REQUIRED vte-2.91) 
+pkg_check_modules(GTKSOURCEVIEW REQUIRED gtksourceview-3.0)
 include_directories(${GTK_INCLUDE_DIRS} ${VTE_INCLUDE_DIRS} ${PROJECT_INCLUDE_DIR} ${PROJECT_LIBRARY_DIR} ${GTKSOURCEVIEW_INCLUDE_DIRS})
 link_directories(${GTK_LIBRARY_DIRS} ${VTE_LIBRARY_DIRS} ${PROJECT_LIBRARY_DIR} ${PROJECT_SOURCES_DIR} ${GTKSOURCEVIEW_LIBRARY_DIRS})
 link_libraries(${GTK_LIBRARIES} ${VTE_LIBRARIES} ${GTKSOURCEVIEW_LIBRARIES})
@@ -81,3 +81,8 @@ else()
   SET(CMAKE_CXX_COMPILER g++)
   SET(CMAKE_CXX_FLAGS "-Wall -ggdb -O0")
 endif()
+
+
+# add the install targets
+#install (TARGETS Tutorial DESTINATION bin)
+#install (FILES "${PROJECT_BINARY_DIR}/TutorialConfig.h" DESTINATION include)
