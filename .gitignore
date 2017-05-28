@@ -16,3 +16,4 @@ Makefile
 /.hgignore
 /src/.directory
 ./*.geany
+.directory

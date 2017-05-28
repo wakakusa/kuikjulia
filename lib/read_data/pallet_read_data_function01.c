@@ -112,7 +112,7 @@ G_MODULE_EXPORT void ReadText_filechooserdialog_FileOpen_OK (GtkWidget *widget,g
 	
 	//読み込み対象ファイル名を取得
 	Pallet_Read_Data.file_path1 = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(Pallet_Read_Data.function_window1));
-	Pallet_Read_Data.script1 =g_strconcat("using DataFrames\n",Pallet_Read_Data.variable_name,"=readtable(\"",Pallet_Read_Data.file_path1,"\"",NULL);
+	Pallet_Read_Data.script1 =g_strconcat("using DataFrames\n",Pallet_Read_Data.variable_name,"=DataFrames.readtable(\"",Pallet_Read_Data.file_path1,"\"",NULL);
 	g_free(Pallet_Read_Data.file_path1);
 	
 	//header

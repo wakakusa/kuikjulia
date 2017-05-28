@@ -9,6 +9,7 @@
 #define PalletInterfaceFile02 "@CMAKE_INSTALL_GLADE_PREFIX@/pallet_read_data.glade"
 #define PalletInterfaceFile03 "@CMAKE_INSTALL_GLADE_PREFIX@/pallet_write_data.glade"
 #define PalletInterfaceFile04 "@CMAKE_INSTALL_GLADE_PREFIX@/pallet_parallel.glade"
+#define PalletInterfaceFile05 "@CMAKE_INSTALL_GLADE_PREFIX@/pallet_charactors.glade"
 
 #define PalletInterfaceFile99 "@CMAKE_INSTALL_GLADE_PREFIX@/pallet_test.glade"
 
