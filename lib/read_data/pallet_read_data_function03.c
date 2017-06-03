@@ -61,10 +61,14 @@ G_MODULE_EXPORT void create_ReadJLD_filechooserdialog_OK (GtkWidget *widget,gpoi
 
 	//保存先ファイル名を取得
 	Pallet_Read_Data.file_path1 = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(Pallet_Read_Data.function_window1));
-	Pallet_Read_Data.script1 =g_strconcat("using JLD,DataFrames\n",Pallet_Read_Data.variable_name,"=JLD.load(\"",Pallet_Read_Data.file_path1,"\"",NULL);
+	Pallet_Read_Data.script1 =g_strconcat("using JLD\n",
+"jldfilepath=jldopen(\"",Pallet_Read_Data.file_path1,"\",\"r\");\n",
+Pallet_Read_Data.variable_name,
+"=JLD.read(jldfilepath,\"",Pallet_Read_Data.variable_name,"\");\n",
+"close(jldfilepath);",NULL);
 	g_free(Pallet_Read_Data.file_path1);
 	
-	Pallet_Read_Data.script1=g_strconcat(Pallet_Read_Data.script1,");\n",NULL);
+	Pallet_Read_Data.script1=g_strconcat(Pallet_Read_Data.script1,"\n",NULL);
 	(Pallet_Read_Data.process_check_flag1) =TRUE;
 
 	gtk_widget_destroy((Pallet_Read_Data.function_window1)); 

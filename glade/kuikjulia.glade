@@ -346,6 +346,11 @@
     <property name="can_focus">False</property>
     <property name="stock">gtk-italic</property>
   </object>
+  <object class="GtkImage">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-italic</property>
+  </object>
   <object class="GtkAboutDialog" id="aboutdialog">
     <property name="can_focus">False</property>
     <property name="type_hint">dialog</property>
@@ -415,7 +420,7 @@
   <object class="GtkImage" id="image8">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
-    <property name="stock">gtk-connect</property>
+    <property name="stock">gtk-network</property>
   </object>
   <object class="GtkWindow" id="kuikjulia_MainWindow">
     <property name="can_focus">False</property>
@@ -658,7 +663,7 @@
                         <property name="label" translatable="yes">charactor</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="image">__glade_unnamed_3</property>
+                        <property name="image">__glade_unnamed_4</property>
                         <property name="use_stock">False</property>
                         <signal name="button-release-event" handler="cb_Pallet_charactors" swapped="no"/>
                       </object>

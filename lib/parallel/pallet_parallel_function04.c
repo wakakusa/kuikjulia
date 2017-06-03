@@ -57,7 +57,7 @@ G_MODULE_EXPORT void create_rmprocess_dialog_OK (GtkWidget *widget,gpointer data
 
   (Pallet_Parallel.variable) = gtk_entry_get_text(Pallet_Parallel.entry_variable);	
 
-  (Pallet_Parallel.script1) = g_strconcat("rmprocs(",Pallet_Parallel.variable,")\n",NULL);
+  (Pallet_Parallel.script1) = g_strconcat("rmprocs([",Pallet_Parallel.variable,"])\n",NULL);
   
   (Pallet_Parallel.process_check_flag1) =TRUE;
   gtk_widget_destroy((Pallet_Parallel.function_window1)); 

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.18.3 -->
+<!-- Generated with glade 3.20.0 -->
 <interface>
   <requires lib="gtk+" version="3.12"/>
   <object class="GtkFileChooserDialog" id="Read_Excelfile_chooserdialog">
     <property name="can_focus">False</property>
     <property name="border_width">5</property>
-    <property name="title" translatable="yes">Select Text File</property>
+    <property name="title" translatable="yes">Select Excel File</property>
     <property name="role">GtkFileChooserDialog</property>
     <property name="type_hint">dialog</property>
     <child internal-child="vbox">
@@ -873,7 +873,7 @@
   <object class="GtkFileChooserDialog" id="Read_JLD_filechooserdialog">
     <property name="can_focus">False</property>
     <property name="border_width">5</property>
-    <property name="title" translatable="yes">Write to HDF5</property>
+    <property name="title" translatable="yes">Read JLD file</property>
     <property name="role">GtkFileChooserDialog</property>
     <property name="type_hint">dialog</property>
     <property name="do_overwrite_confirmation">True</property>
@@ -905,7 +905,7 @@
             </child>
             <child>
               <object class="GtkButton" id="Read_JLD_filechooserdialog_ok_button">
-                <property name="label">gtk-save</property>
+                <property name="label">gtk-open</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
@@ -974,7 +974,7 @@
   <object class="GtkFileChooserDialog" id="Read_HDF5_filechooserdialog">
     <property name="can_focus">False</property>
     <property name="border_width">5</property>
-    <property name="title" translatable="yes">Read HDF5</property>
+    <property name="title" translatable="yes">Read HDF5 file</property>
     <property name="role">GtkFileChooserDialog</property>
     <property name="type_hint">dialog</property>
     <property name="do_overwrite_confirmation">True</property>
@@ -1097,7 +1097,7 @@
   <object class="GtkFileChooserDialog" id="Read_SAS_filechooserdialog">
     <property name="can_focus">False</property>
     <property name="border_width">5</property>
-    <property name="title" translatable="yes">Write to HDF5</property>
+    <property name="title" translatable="yes">Read sas7bat</property>
     <property name="role">GtkFileChooserDialog</property>
     <property name="type_hint">dialog</property>
     <property name="do_overwrite_confirmation">True</property>
@@ -1130,7 +1130,7 @@
             </child>
             <child>
               <object class="GtkButton" id="Read_SAS_filechooserdialog_ok_button">
-                <property name="label">gtk-save</property>
+                <property name="label">gtk-open</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
