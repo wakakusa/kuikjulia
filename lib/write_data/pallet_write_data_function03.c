@@ -38,6 +38,8 @@ void create_Write_JLD_filechooserdialog(StructPalletReadWriteData *struct_widget
    * 格納先にあわせて、GTK_LABELやGTK_ENTRYなどGTK_～を変更すること。
    *不明な場合はGTK_WIDGETでも可能。ただしエラーは出力される。*/
    (struct_widget->entry_variable_name) 		 = GTK_ENTRY(gtk_builder_get_object(builder, "Write_JLD_filechooserdialog_entry_variable_name"));
+   (struct_widget->checkbutton_usingpackage) = GTK_CHECK_BUTTON(gtk_builder_get_object(builder, "Write_JLD_filechooserdialog_checkbutton_usingpackage"));
+   (struct_widget->entry_usingpackage) 		 = GTK_ENTRY(gtk_builder_get_object(builder, "Write_JLD_filechooserdialog_entry_usingpackage"));
 
   /* UI_FILEのシグナルハンドラの設定  This is important */
   gtk_builder_connect_signals (builder, &struct_widget); 
@@ -62,9 +64,21 @@ G_MODULE_EXPORT void create_WriteJLD_filechooserdialog_OK (GtkWidget *widget,gpo
 	//保存先ファイル名を取得
 	Pallet_Write_Data.file_path1 = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(Pallet_Write_Data.function_window1));
 	Pallet_Write_Data.script1 =g_strconcat("using JLD\n",
-"jldfilepath=jldopen(\"",Pallet_Write_Data.file_path1,"\",\"w\");\n",
-"JLD.write(jldfilepath,\"",Pallet_Write_Data.variable_name,"\",",Pallet_Write_Data.variable_name,");\n",
-"close(jldfilepath)",NULL);
+						"jldfilepath=jldopen(\"",Pallet_Write_Data.file_path1,"\",\"w\");\n",NULL);
+
+
+	//using package
+	Pallet_Write_Data.toggle_button_active=gtk_toggle_button_get_active(Pallet_Write_Data.checkbutton_usingpackage);
+	if(Pallet_Write_Data.toggle_button_active==TRUE)
+	{
+		Pallet_Write_Data.usingpackage=g_strconcat("addrequire(jldfilepath,",gtk_entry_get_text(Pallet_Write_Data.entry_usingpackage),");\n",NULL);
+		Pallet_Write_Data.script1 =g_strconcat(Pallet_Write_Data.script1,Pallet_Write_Data.usingpackage,NULL);
+		g_free(Pallet_Read_Data.usingpackage);
+	}
+	
+	Pallet_Write_Data.script1 =g_strconcat(Pallet_Write_Data.script1,
+						"JLD.write(jldfilepath,\"",Pallet_Write_Data.variable_name,"\",",Pallet_Write_Data.variable_name,");\n",
+						"close(jldfilepath)",NULL);
 	g_free(Pallet_Write_Data.file_path1);
 	
 	Pallet_Write_Data.script1=g_strconcat(Pallet_Write_Data.script1,";\n",NULL);

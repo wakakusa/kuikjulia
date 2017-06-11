@@ -122,6 +122,11 @@ typedef struct {
 	GtkCheckButton *checkbutton_colnames;
 	GtkEntry *entry_colnames;
 	gint colnames_length;
+
+	gchar *usingpackage;//Bool -- Use the information from the file's header line to determine column names. Defaults to true.
+	GtkCheckButton *checkbutton_usingpackage;
+	GtkEntry *entry_usingpackage;
+	gint usingpackage_length;
 	
 }StructPalletReadWriteData;
 

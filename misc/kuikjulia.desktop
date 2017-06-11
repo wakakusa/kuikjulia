@@ -1,7 +1,7 @@
 #!/usr/bin/env xdg-open
 [Desktop Entry]
-Exec=/home/sas/kuikjulia/bin/kuikjulia
-Icon=/home/sas/kuikjulia/glade/pixmaps/kuikjulia.svg
+Exec=/home/sas/kuikjulia.trunk/src/kuikjulia
+Icon=/home/sas/kuikjulia.trunk/glade/pixmaps/kuikjulia.svg
 Terminal=false
 Type=Application
 Name[ja_JP]=kuikjulia 
